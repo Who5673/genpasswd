@@ -9,7 +9,7 @@ genpasswd app being opened in xfce4 Desktop (Kali Linux).
 
 ![Screenshot](./pictures/genpasswdtui_desktop.png)
 
-genpasswdtui app being opened in Kali Linux Text teletypewriter tty2.
+genpasswdtui app being opened in Kali Linux Text TeleTYpewriter tty2.
 
 ## Standout features:
 - **Generate strong passwords:**
