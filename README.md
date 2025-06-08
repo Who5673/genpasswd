@@ -12,7 +12,15 @@ genpasswd app being opened in xfce4 Desktop (Kali Linux).
 genpasswdtui app being opened in Kali Linux Text TeleTYpewriter tty2.
 
 ## Standout features:
-- **Generate strong passwords:**
+- **Generate strong passwords:** 
+After running `genpasswd`, you will be prompted to take down the length, the strong password will be generated, and then after doing that, the app will ask you that you want to clear logs, take down apps that you want to save or do nothing (if leave empty).
+
+About `genpasswdtui`, the options will be seen by you so you can control it using arrows (up, down, left, right) and Enter key to interact (same as right arrow).
+
+## Requirements and dependencies
+This app needs python3 and python3-rich library for genpasswd CLI and ncurses.h (from libncurses-dev) for genpasswdtui.
+
+## Installation:
 
 
 License: MIT
