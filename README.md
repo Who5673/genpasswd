@@ -25,6 +25,9 @@ This app needs python3 and python3-rich library for genpasswd CLI and ncurses.h 
 ### 1. Install via Debian Packages
 - Go to this link: https://github.com/Who5673/genpasswd/releases
 - From the latest release, choose password-generate_1.0.6.deb
+
+![Screenshot](./pictures/install-method1.png)
+
 - Install .deb file using gdebi or dpkg:<br>
         `sudo gdebi /path/to/password-generate.deb # Can use relative path instead of absolute one`
         or `sudo dpkg -i /path/to/password-generate # You can use --install instead of -i`
