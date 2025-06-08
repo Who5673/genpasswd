@@ -1,0 +1,114 @@
+#!/usr/bin/env python
+import secrets
+import string
+from rich import console, print
+from rich.prompt import Prompt
+console = console.Console()
+from subprocess import check_output as c
+from os import system as s
+
+class PasswordError(BaseException):
+    def __init__(self, m=None) -> None:
+        if m is None:
+            m = "The password must be greater than 13 strings to get strong enough."
+        super().__init__(m)
+
+class PrivilegeError(BaseException):
+    def __init__(self, n=None) -> None:
+        if n is None:
+            n = "Please run this program as REAL root or sudo privilege, as we will LOG your action in the progress."
+        super().__init__(n)
+
+class TooManyStringsError(BaseException):
+    def __init__(self, mn=None) -> None:
+        if mn is None:
+            mn = "The password is too long for the logs (over 60 strings), and we think that you cannot remember that password."
+        super().__init__(mn)
+
+class ChoiseError(BaseException):
+    def __init__(self, args=None) -> None:
+        if args is None:
+            args = "Invalid choise! Please re-run please program and choose another choise. No logs appended for the penalty!"
+        super().__init__(args)
+
+try:
+    # login = c("whoami", shell=True).decode("utf8").strip()
+    # if login != "root": raise PrivilegeError
+    def generate_strong_password(length=20):
+        if length < 13:
+            raise PasswordError
+        if length > 60:
+            raise TooManyStringsError
+    
+        charset = string.ascii_letters + string.digits + string.punctuation
+        password = ''.join(secrets.choice(charset) for _ in range(length))
+    
+        return password
+    
+    def generate():
+        if __name__ == "__main__":
+            s('echo "\033[1;38;2;255;165;0m$(figlet genpasswd | boxes -d parchment)\033[0m"')
+            print("[bold blue]genpasswd (password-generator) version: 1.0.6")
+            login = c("whoami", shell=True).decode("utf8").strip()
+            if login != "root": raise PrivilegeError
+            numberofpasscode = int(Prompt.ask("[green]Please take down the number of password strings that you want to create: [/green]"))
+            x = generate_strong_password(numberofpasscode)
+            print()
+            print("[bold blue](+) Strong password: [/bold blue]")
+            print(f"[bold white]---->[/bold white]   [bold yellow]{x}[/bold yellow]")
+            print("[bold red](!) WARNING! DO NOT SHARE THAT PASSWORD TO ANYONE. THAT THING NEEDS TO BE YOUR SECRET[/bold red]")
+            print()
+            ip = c("hostname -I", shell=True).decode("utf8").strip()
+            date = c("date +'%F_%H:%M.%S'", shell=True).decode('utf8').strip()
+            application = Prompt.ask("[green](Optional, Strongly Recommend) Maybe you want to take down the app you want to use that password for, or you can leave this prompt empty. If the app is 'clear' or 'clear-autoyes', you will get the green light to DELETE ALL LOGS with 'clear-autoyes' prompts 'y' to all prompts, so be careful").lower()
+            with open('/var/log/secrof.log', mode='a') as f:
+                if application == '':
+                    f.write(f'Password {x} added from {ip} with the time [{date}]\n')
+                    s("sudo chattr +a /var/log/secrof.log")
+                elif (application == 'clear') or (application == 'clear-autoyes'):
+                    if application == 'clear':
+                        choiseyesno = Prompt.ask("""[bold red](!) ARE YOU SURE TO DELETE ALL THE LOGS? YOU CAN LOST ALL YOUR PASSWORDS WHICH HAVE BEEN CREATED AT ANY TIME![/bold red]
+[bold yellow]You might want to skip appending logs if you choose "no"(n).
+[green](+) Proceed (y|n)?""").lower()
+                        if choiseyesno == 'y':
+                            print("[rgb(255,165,0)](!) Deleting logs...")
+                            s("sudo chattr -i -a /var/log/secrof.log")
+                            s("sudo echo '' > /var/log/secrof.log")
+                            s("sudo chattr +a /var/log/secrof.log")
+                            print("[green]We've done deleting all the logs in /var/log/secrof.log. If you see some errors while doing this, maybe you need to chattr -i -a some files and re-run this program")
+                            exit(0)
+                        elif choiseyesno == 'n':
+                            print("[green]Skipping appending logs...")
+                            print("[green]")
+                            exit(0)
+                        else:
+                            raise ChoiseError
+                    else:
+                        print("[bold red](!) DELETING LOGS WITHOUT PROMPTING (DANGEROUS! Do you know what you are doing?)...")
+                        s("sudo chattr -i -a /var/log/secrof.log")
+                        s("sudo echo '' > /var/log/secrof.log")
+                        s("sudo chattr +a /var/log/secrof.log")
+                        print("[green]We've done deleting all the logs in /var/log/secrof.log. If you see some errors while doing this, maybe you need to chattr -i -a some files and re-run this program")
+                        exit(0)
+                else:
+                    f.write(f'Password {x} added from {ip} with the time [{date}] for the app {application}\n')
+                    s("sudo chattr +a /var/log/secrof.log")
+                    exit(0)
+    generate()
+except KeyboardInterrupt:
+    print("""
+[bold green]You have canceled the program. Exiting...[/bold green]
+          """)
+    exit(130)
+except PrivilegeError as priv:
+    print(f"[bold]Caution: {priv}[/bold]")
+    exit(1)
+except PasswordError as passss:
+    print(f"[bold]Error: {passss}[/bold]")
+    exit(1)
+except TooManyStringsError as tmse:
+    print(f"[bold]Caution: {tmse}[/bold]")
+    exit(1)
+except Exception as e:
+    print("Error:", f"[bold]{e}[/bold]")
+    exit(1)
