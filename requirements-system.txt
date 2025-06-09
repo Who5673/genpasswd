@@ -1,0 +1,4 @@
+# requirements-system.txt
+# Package required to be installed from system package manager
+libncurses-dev
+figlet

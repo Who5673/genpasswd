@@ -18,11 +18,18 @@ After running `genpasswd`, you will be prompted to take down the length, the str
     About `genpasswdtui`, the options will be seen by you so you can control it using arrows (up, down, left, right) and Enter key to interact (same as right arrow).
 
 ## Requirements and dependencies
-This app needs python3 and python3-rich library for genpasswd CLI and ncurses.h (from libncurses-dev) for genpasswdtui.
+**This app needs those requirements in PyPI are:**
+- `rich` (needs to have colors)
+Note: You can install python3 libraries (`python3-xyz`, which xyz is a library name) from apt, like `python3-rich`
+**Those apps needs to be installed as the dependencies of genpasswd from the system are:**
+- `libncurses-dev` (It has `ncurses.h` to run TUI apps, from Advanced Package Tool - `apt`)
+- `figlet` (to make ASCII logos, from apt)
 
 ## Installation:
-2 ways to install genpasswd:
-### 1. Install via Debian Packages
+2 ways to install genpasswd: (Debian Packages and GiHub and setup.py. In the future, we will have another one for Flatpak)
+### 1. Install via Debian Packages (from `dpkg` or `gdebi`)
+- If you use GDebi Package Installer to install, please install gdebi via apt or software/app center first:
+    `sudo apt update && sudo apt --yes install gdebi # You do not have to use 'sudo apt update' if you do not want to use the latest gdebi`
 - Go to this link: https://github.com/Who5673/genpasswd/releases
 - From the latest release, choose password-generate_1.0.6.deb
 
@@ -30,8 +37,11 @@ This app needs python3 and python3-rich library for genpasswd CLI and ncurses.h 
 
 - Install .deb file using gdebi or dpkg:<br>
         `sudo gdebi /path/to/password-generate.deb # Can use relative path instead of absolute one`
-        or `sudo dpkg -i /path/to/password-generate # You can use --install instead of -i`
+        or `sudo dpkg -i /path/to/password-generate; sudo apt --fix-broken install # You can use --install instead of -i`
         or open the package with GDebi Package Installer (gdebi-gtk) to install.
+- **Cautions**:
+        As dpkg cannot automatically solve dependencies, so you may need to use `sudo apt --fix-broken install` to solve them.
+        If you have changed attribute (`chattr`) some system directories, please `chattr -i -a /usr /bin ...` first.
 - Test file by using this command: `genversion`. If it returns to a version, it means that you have done the installation.
 ### 2. Install by cloning this website
 - Clone this website:

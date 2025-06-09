@@ -1,10 +1,27 @@
 from setuptools import setup, find_packages
+from subprocess import check_output as c
 
+# ./bin -> /bin
+# ./usr/bin -> /usr/bin
+# ./man -> /usr/share/man/man1
+# ./<module> -> /usr/lib/python3.X/site-packages/<module>
+# In ./<module>:
+# __init__.py -> To scan that it was a module
+# __main__.py -> Python logic
+# <module>.so -> Shared Object (Shared Library)
+
+user = c("whoami", shell=True)
+if (user != "root"): raise PermissionError("This setup.py needs to run as root for establishing genpasswd app into your system")
 setup(
     name="genpasswd",
     version="1.0.6",
     author="who5673",
     author_email="windows7modrenedition@gmail.com",
+    data_files=[
+        ('bin', ['bin/genpasswd']),
+        ('bin', ['bin/genpasswdtui']),
+        ('share/man/man1', ['man/genpasswdtui.1.gz']),
+    ],
     include_packages_data=True,
     description="Generate strong passwords without using the Internet. Use the file system to save generated passwords.",
 
