@@ -30,7 +30,7 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 ### 1. Install via Debian Packages (from `dpkg` or `gdebi`)
 - If you use dpkg to install:
 ```
-wget https://objects.githubusercontent.com/github-production-release-asset-2e65be/998309244/95db7f24-cd32-4190-814b-a9505a852bb8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250609%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250609T064251Z&X-Amz-Expires=300&X-Amz-Signature=fb3213a1c2ebab3b2b712e95aab8357ead4c573e59f69dfd84a37ae3a329d7b6&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dpassword-generate_1.0.6.deb&response-content-type=application%2Foctet-stream
+wget https://github.com/Who5673/genpasswd/releases/download/1.0.6/password-generate_1.0.6.deb
 sudo dpkg -i password-generate_1.0.6.deb
 ```
 - Check that if you have installed password-generator (genpasswd)
