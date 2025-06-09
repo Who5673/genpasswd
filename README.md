@@ -29,7 +29,8 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 2 ways to install genpasswd: (Debian Packages and GiHub and setup.py. In the future, we will have another one for Flatpak)
 ### 1. Install via Debian Packages (from `dpkg` or `gdebi`)
 - If you use GDebi Package Installer to install, please install gdebi via apt or software/app center first:
-    ```sudo apt update && sudo apt --yes install gdebi```
+    ```sudo apt update && sudo apt --yes install gdebi
+     ```
 - Go to this link: https://github.com/Who5673/genpasswd/releases
 - From the latest release, choose password-generate_1.0.6.deb
 
