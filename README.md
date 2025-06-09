@@ -55,9 +55,7 @@ sudo apt update && sudo apt --yes install gdebi
 
 - Install .deb file using gdebi or dpkg.  
     **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**
-```
-sudo gdebi /path/to/password-generate.deb
-```
+`sudo gdebi /path/to/password-generate.deb`
     **Using GDebi Package Installer** (`gdebi-gtk`) **,follow these methods:**  
         - Step 1: After downloading that Debian Package, click the file icon (firefox)
 
