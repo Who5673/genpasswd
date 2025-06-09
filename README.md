@@ -37,7 +37,7 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 
 - Wait until the progress is completed.
 
-![Screenshot](./pictures/install-methods2.png)
+![Screenshot](./pictures/install_method2.png)
 
 - Install .deb file using gdebi or dpkg.<br>
     **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**
