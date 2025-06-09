@@ -54,7 +54,7 @@ sudo apt update && sudo apt --yes install gdebi
 ![Screenshot](./pictures/install_method2.png)
 
 - Install .deb file using gdebi or dpkg.  
-    **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**  
+    **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**
 ```
 sudo gdebi /path/to/password-generate.deb
 ```
