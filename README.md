@@ -45,7 +45,14 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
         **Using dpkg: Open the Terminal and execute this command:**:  
         `sudo dpkg -i /path/to/password-generate; sudo apt --fix-broken install # You can use --install instead of -i`  
         **Using GDebi Package Installer** (`gdebi-gtk`) **,follow these methods:**  
-        - Step 1:
+        - Step 1: After downloading that Debian Package, click the file icon (firefox)
+
+![Screenshot](./pictures/install-method3.png)
+        - Step 2: Duplicate to the package (make sure that GDebi Package Installer is installed and is set as the default app for opening Debian Packages).  
+        (You can click right mouse -> Open with...(or Open with GDebi Package Installer - 1) -> find GDebi Package Installer (if the system doesn't have the button like 1))
+
+![Screenshot](./pictures/install-method4.png)
+        - Step 3: 
 - **Cautions**:
         As dpkg cannot automatically solve dependencies, so you may need to use `sudo apt --fix-broken install` to solve them.
         If you have changed attribute (`chattr`) some system directories, please `chattr -i -a /usr /bin ...` first.
