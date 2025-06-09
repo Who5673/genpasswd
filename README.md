@@ -41,7 +41,7 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 
 - Install .deb file using gdebi or dpkg.  
         **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**  
- 
+    
         `sudo gdebi /path/to/password-generate.deb # Can use relative path instead of absolute one`  
  
         **Using dpkg: Open the Terminal and execute this command:**:  
