@@ -25,7 +25,7 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 - `libncurses-dev` (It has `ncurses.h` to run TUI apps, from Advanced Package Tool - `apt`)
 - `figlet` (to make ASCII logos, from apt)
 
-## Installation:
+## Installations:
 2 ways to install genpasswd: (Debian Packages and GiHub and setup.py. In the future, we will have another one for Flatpak)
 ### 1. Install via Debian Packages (from `dpkg` or `gdebi`)
 - If you use GDebi Package Installer to install, please install gdebi via apt or software/app center first:
@@ -48,18 +48,36 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
         - Step 1: After downloading that Debian Package, click the file icon (firefox)
 
 ![Screenshot](./pictures/install-method3.png)
-        - Step 2: Duplicate to the package (make sure that GDebi Package Installer is installed and is set as the default app for opening Debian Packages).  
+        - Step 2: Double click to the package (make sure that GDebi Package Installer is installed and is set as the default app for opening Debian Packages).  
+<br>
         (You can click right mouse -> Open with...(or Open with GDebi Package Installer - 1) -> find GDebi Package Installer (if the system doesn't have the button like 1))
 
 ![Screenshot](./pictures/install-method4.png)
-        - Step 3: 
+        - Step 3: Once the GDebi Package Installer's window appeared, click "Install Package"
+
+![Screenshot](./pictures/install-method5.png)
+        - Wait for the installation until it is done:
+
+![Screenshot](./pictures/install-method6.png)
+        - If this `gdebi-gtk` window appears, it means that the installation is done:
+
+![Screenshot](./pictures/install-method7.png)
+        - To check you have installed password-generator package (genpasswd), open the Terminal (Ctrl+Alt+T) and type:  
+        `genversion`
+        - If it returns to a version, it means that you have installed password-generator (genpasswd).
+
+![Screenshot](./pictures/install-method8.png)
+        - Optional: You can remove the installation package like this picture (make sure to remember the path to the package):
+
+![Screenshot](./pictures/delete-method.png)
 - **Cautions**:
         As dpkg cannot automatically solve dependencies, so you may need to use `sudo apt --fix-broken install` to solve them.
         If you have changed attribute (`chattr`) some system directories, please `chattr -i -a /usr /bin ...` first.
-- Test file by using this command: `genversion`. If it returns to a version, it means that you have done the installation.
 ### 2. Install by cloning this website
 - Clone this website:
         `git clone https://github.com/Who5673/genpasswd/releases`
+
+## Uninstallations:
 
 
 License: MIT
