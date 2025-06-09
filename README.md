@@ -35,10 +35,17 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 
 ![Screenshot](./pictures/install-method1.png)
 
-- Install .deb file using gdebi or dpkg:<br>
+- Wait until the progress is completed.
+
+![Screenshot](./pictures/install-methods2.png)
+
+- Install .deb file using gdebi or dpkg.<br>
+    **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**
         `sudo gdebi /path/to/password-generate.deb # Can use relative path instead of absolute one`
-        or `sudo dpkg -i /path/to/password-generate; sudo apt --fix-broken install # You can use --install instead of -i`
-        or open the package with GDebi Package Installer (gdebi-gtk) to install.
+    **Using dpkg: Open the Terminal and execute this command:**:
+        `sudo dpkg -i /path/to/password-generate; sudo apt --fix-broken install # You can use --install instead of -i`
+    **Using GDebi Package Installer** (`gdebi-gtk`) **,follow these methods:**
+    - Step 1
 - **Cautions**:
         As dpkg cannot automatically solve dependencies, so you may need to use `sudo apt --fix-broken install` to solve them.
         If you have changed attribute (`chattr`) some system directories, please `chattr -i -a /usr /bin ...` first.
