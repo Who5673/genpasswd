@@ -43,11 +43,9 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
         **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**  
   
         `sudo gdebi /path/to/password-generate.deb # Can use relative path instead of absolute one`  
-  
         **Using dpkg: Open the Terminal and execute this command:**:  
   
         `sudo dpkg -i /path/to/password-generate; sudo apt --fix-broken install # You can use --install instead of -i`  
-  
         **Using GDebi Package Installer** (`gdebi-gtk`) **,follow these methods:**  
         - Step 1:
 - **Cautions**:
