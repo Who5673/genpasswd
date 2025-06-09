@@ -28,6 +28,16 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 ## Installations:
 2 ways to install genpasswd: (Debian Packages and GiHub and setup.py. In the future, we will have another one for Flatpak)
 ### 1. Install via Debian Packages (from `dpkg` or `gdebi`)
+- If you use dpkg to install:
+```
+wget https://objects.githubusercontent.com/github-production-release-asset-2e65be/998309244/95db7f24-cd32-4190-814b-a9505a852bb8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250609%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250609T064251Z&X-Amz-Expires=300&X-Amz-Signature=fb3213a1c2ebab3b2b712e95aab8357ead4c573e59f69dfd84a37ae3a329d7b6&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dpassword-generate_1.0.6.deb&response-content-type=application%2Foctet-stream
+sudo dpkg -i password-generate_1.0.6.deb
+```
+- Check that if you have installed password-generator (genpasswd)
+    ```
+genversion
+    ```
+- If it returns to a version, it means that you have installed password-generator.
 - If you use GDebi Package Installer to install, please install gdebi via apt or software/app center first:
 ```
 sudo apt update && sudo apt --yes install gdebi
@@ -44,8 +54,6 @@ sudo apt update && sudo apt --yes install gdebi
 - Install .deb file using gdebi or dpkg.  
         **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**  
         `sudo gdebi /path/to/password-generate.deb # Can use relative path instead of absolute one`  
-        **Using dpkg: Open the Terminal and execute this command:**:  
-        `sudo dpkg -i /path/to/password-generate; sudo apt --fix-broken install # You can use --install instead of -i`  
         **Using GDebi Package Installer** (`gdebi-gtk`) **,follow these methods:**  
         - Step 1: After downloading that Debian Package, click the file icon (firefox)
 
