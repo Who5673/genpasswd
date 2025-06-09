@@ -33,7 +33,7 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 - Go to this link: https://github.com/Who5673/genpasswd/releases
 - From the latest release, choose password-generate_1.0.6.deb
 
-![Screenshot](./pictures/install-method1.png)
+<!--![Screenshot](./pictures/install-method1.png)-->
 
 - Install .deb file using gdebi or dpkg:<br>
         `sudo gdebi /path/to/password-generate.deb # Can use relative path instead of absolute one`
