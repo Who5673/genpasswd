@@ -13,6 +13,12 @@ long_description=open("README.md").read(),
 
 url="https://github.com/users/Who5673/genpasswdtui",
     packages=find_packages(),
+    entry_points={
+        'console_scripts': [
+            'genpasswd = genpasswd.__main__:main'
+            'genpasswdtui = genpasswdtui.__main__:main'
+        ]
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: POSIX :: Linux",
