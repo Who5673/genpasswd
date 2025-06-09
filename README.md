@@ -33,11 +33,12 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 wget https://github.com/Who5673/genpasswd/releases/download/1.0.6/password-generate_1.0.6.deb
 sudo dpkg -i password-generate_1.0.6.deb
 ```
-- Check that if you have installed password-generator (genpasswd)
-    ```
+Check if you have installed password-generator (genpasswd)
+```
 genversion
-    ```
-- If it returns to a version, it means that you have installed password-generator.
+```
+If it returns to a version, it means that you have installed password-generator.
+<br>
 - If you use GDebi Package Installer to install, please install gdebi via apt or software/app center first:
 ```
 sudo apt update && sudo apt --yes install gdebi
