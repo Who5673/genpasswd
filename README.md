@@ -30,7 +30,7 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 ### 1. Install via Debian Packages (from `dpkg` or `gdebi`)
 - **Install via dpkg**:
 ```
-wget https://github.com/Who5673/genpasswd/releases/download/1.0.6/password-generate_1.0.6.deb
+wget https://github.com/Who5673/genpasswd/releases/download/1.0.6/password-generate_1.0.7.deb
 sudo dpkg -i password-generate_1.0.6.deb
 ```
 Check if you have installed password-generator (genpasswd)
@@ -44,41 +44,13 @@ Please make sure that you have installed gdebi via apt or software/app center fi
 ```
 sudo apt update && sudo apt --yes install gdebi
 ```
-- Go to this link: https://github.com/Who5673/genpasswd/releases
-- From the latest release, choose password-generate_1.0.6.deb
-
-![Screenshot](./pictures/install-method1.png)
-
-- Wait until the progress is completed.
-
-![Screenshot](./pictures/install_method2.png)
 
 - Install .deb file using gdebi or dpkg.  
     **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**
-`sudo gdebi /path/to/password-generate.deb`
-    **Using GDebi Package Installer** (`gdebi-gtk`) **,follow these methods:**  
-        - Step 1: After downloading that Debian Package, click the file icon (firefox)
-
-![Screenshot](./pictures/install-method3.png)
-        - Step 2: Double click to the package (make sure that GDebi Package Installer is installed and is set as the default app for opening Debian Packages).  
-<br>
-        (You can click right mouse -> Open with...(or Open with GDebi Package Installer - 1) -> find GDebi Package Installer (if the system doesn't have the button like 1))
-
-![Screenshot](./pictures/install-method4.png)
-        - Step 3: Once the GDebi Package Installer's window appeared, click "Install Package"
-
-![Screenshot](./pictures/install-method5.png)
-        - Wait for the installation until it is done:
-
-![Screenshot](./pictures/install-method6.png)
-        - If this `gdebi-gtk` window appears, it means that the installation is done:
-
-![Screenshot](./pictures/install-method7.png)
-        - To check you have installed password-generator package (genpasswd), open the Terminal (Ctrl+Alt+T) and type:  
-        `genversion`
-        - If it returns to a version, it means that you have installed password-generator (genpasswd).
-
-![Screenshot](./pictures/install-method8.png)
+```
+wget https://github.com/Who5673/genpasswd/releases/download/1.0.6/password-generate_1.0.7.deb
+sudo gdebi /path/to/password-generate.deb
+```
         - Optional: You can remove the installation package like this picture (make sure to remember the path to the package):
 
 ![Screenshot](./pictures/delete-method.png)
