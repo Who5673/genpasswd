@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 import secrets
 import string
+import argparse as argp
 from rich import console, print
 from rich.prompt import Prompt
 console = console.Console()
@@ -31,6 +32,12 @@ class ChoiseError(BaseException):
             args = "Invalid choise! Please re-run please program and choose another choise. No logs appended for the penalty!"
         super().__init__(args)
 
+parser1 = argp.ArgumentParser(description="genpasswd parser: Choose one of those options:")
+parser = parser1.add_mutually_exclusive_group(required=False)
+parser.add_argument('--version', action='store_true', help="Prints the version of genpasswd")
+parser.add_argument('--TUI', action='store_true', help="Run genpasswdtui")
+parser.add_argument('--CLI', action='store_true', help='Run genpasswd, default mode if you do not specify any options')
+args = parser1.parse_args()
 try:
     # login = c("whoami", shell=True).decode("utf8").strip()
     # if login != "root": raise PrivilegeError
@@ -48,7 +55,7 @@ try:
     def generate():
         if __name__ == "__main__":
             s('echo "\033[1;38;2;255;165;0m$(figlet genpasswd | boxes -d parchment)\033[0m"')
-            print("[bold blue]genpasswd (password-generator) version: 1.0.6")
+            print("[bold blue]genpasswd (password-generator) version: 1.0.7")
             login = c("whoami", shell=True).decode("utf8").strip()
             if login != "root": raise PrivilegeError
             numberofpasscode = int(Prompt.ask("[green]Please take down the number of password strings that you want to create: [/green]"))
@@ -94,7 +101,10 @@ try:
                     f.write(f'Password {x} added from {ip} with the time [{date}] for the app {application}\n')
                     s("sudo chattr +a /var/log/secrof.log")
                     exit(0)
-    generate()
+    if args.version: print("genpasswd CLI 1.0.7")
+    elif args.TUI: s("sudo genpasswdtui")
+    elif args.CLI: generate()
+    else: generate()
 except KeyboardInterrupt:
     print("""
 [bold green]You have canceled the program. Exiting...[/bold green]
