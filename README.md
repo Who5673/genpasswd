@@ -51,7 +51,7 @@ sudo apt update && sudo apt --yes install gdebi
 wget https://github.com/Who5673/genpasswd/releases/download/1.0.6/password-generate_1.0.7.deb
 sudo gdebi /path/to/password-generate.deb
 ```
-        - Optional: You can remove the installation package like this picture (make sure to remember the path to the package):
+- Optional: You can remove the installation package like this picture (make sure to remember the path to the package):
 
 ![Screenshot](./pictures/delete-method.png)
 - **Cautions**:
