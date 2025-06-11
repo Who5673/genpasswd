@@ -26,7 +26,6 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 - `figlet` (to make ASCII logos, from apt)
 
 ## Installations:
-2 ways to install genpasswd: (Debian Packages and GiHub and setup.py. In the future, we will have another one for Flatpak)
 ### 1. Install via Linux system Packages Installer (from `apt`, `dpkg` or `gdebi`)
 - **Install via apt**:
 ```
@@ -63,9 +62,6 @@ sudo gdebi /path/to/password-generate.deb
 - **Cautions**:
         As dpkg cannot automatically solve dependencies, so you may need to use `sudo apt --fix-broken install` to solve them.
         If you have changed attribute (`chattr`) some system directories, please `chattr -i -a /usr /bin ...` first.
-### 2. Install by cloning this website
-- Clone this website:
-        `git clone https://github.com/Who5673/genpasswd/releases`
 
 ## Uninstallations:
 
