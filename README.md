@@ -27,7 +27,13 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 
 ## Installations:
 2 ways to install genpasswd: (Debian Packages and GiHub and setup.py. In the future, we will have another one for Flatpak)
-### 1. Install via Debian Packages (from `dpkg` or `gdebi`)
+### 1. Install via Linux system Packages Installer (from `apt`, `dpkg` or `gdebi`)
+- **Install via apt**:
+```
+curl -fsSL https://who5673.github.io/genpasswd-apt-repo/genpasswd.gpg | gpg --dearmor -o /usr/share/keyrings/genpasswd.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/genpasswd.gpg] https://who5673.github.io/genpasswd-apt-repo stable main" | sudo tee /etc/apt/sources.list.d/genpasswd.list
+sudo apt update && sudo apt --yes install password-generator
+```
 - **Install via dpkg**:
 ```
 wget https://github.com/Who5673/genpasswd/releases/download/1.0.6/password-generate_1.0.7.deb
