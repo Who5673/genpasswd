@@ -29,7 +29,7 @@ Note: You can install python3 libraries (`python3-xyz`, which xyz is a library n
 ### 1. Install via Linux system Packages Installer (from `apt`, `dpkg` or `gdebi`)
 - **Install via apt**:
 ```
-curl -fsSL https://who5673.github.io/genpasswd-apt-repo/genpasswd.gpg | gpg --dearmor -o /usr/share/keyrings/genpasswd.gpg > /dev/null
+curl -fsSL https://who5673.github.io/genpasswd-apt-repo/genpasswd.gpg | sudo gpg --dearmor -o /usr/share/keyrings/genpasswd.gpg > /dev/null
 echo "deb [signed-by=/usr/share/keyrings/genpasswd.gpg] https://who5673.github.io/genpasswd-apt-repo stable main" | sudo tee /etc/apt/sources.list.d/genpasswd.list
 sudo apt update && sudo apt --yes install password-generator
 ```
@@ -66,6 +66,7 @@ sudo gdebi /path/to/password-generate.deb
 ## Uninstallations:
 
 
-License: MIT
+License: MIT  
+From v1.0.8 of genpasswd, the license will be changed from MIT to GPLv3.  
 Some ideas assisted by ChatGPT - (c) genpasswd, who5673, June 2025. All rights served.
 You can support us to improve this application in the future, but do not vandalize this project or make another copyright of it.
