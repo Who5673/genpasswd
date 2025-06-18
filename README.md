@@ -18,25 +18,32 @@ After running `genpasswd`, you will be prompted to take down the length, the str
     About `genpasswdtui`, the options will be seen by you so you can control it using arrows (up, down, left, right) and Enter key to interact (same as right arrow).
 
 ## Requirements and dependencies
-**This app needs those requirements in PyPI are:**
+**This app needs those requirements in PyPI (or apt) are:**
 - `rich` (needs to have colors)
-Note: You can install python3 libraries (`python3-xyz`, which xyz is a library name) from apt, like `python3-rich`
+Recommend: You can install python3 libraries (`python3-xyz`, which xyz is a library name) from apt, like `python3-rich`
+- `textual` (modern TUI python library)
 **Those apps needs to be installed as the dependencies of genpasswd from the system are:**
 - `libncurses-dev` (It has `ncurses.h` to run TUI apps, from Advanced Package Tool - `apt`)
-- `figlet` (to make ASCII logos, from apt)
+- `pkexec` (automatic prompt for root access)
+- `bash` (for shell commands)
 
 ## Installations:
 ### 1. Install via Linux system Packages Installer (from `apt`, `dpkg` or `gdebi`)
-- **Install via apt**:
+- **Install via apt for the first time**:
 ```
 curl -fsSL https://who5673.github.io/genpasswd-apt-repo/genpasswd.gpg | sudo gpg --dearmor -o /usr/share/keyrings/genpasswd.gpg > /dev/null
 echo "deb [signed-by=/usr/share/keyrings/genpasswd.gpg] https://who5673.github.io/genpasswd-apt-repo stable main" | sudo tee /etc/apt/sources.list.d/genpasswd.list
-sudo apt update && sudo apt --yes install password-generator
+sudo apt update 2>/dev/null && sudo apt --yes install password-generator
 ```
+- __Install via apt after adding the repo:__
+```
+sudo apt install password-generator --yes
+```  
+
 - **Install via dpkg**:
 ```
-wget https://github.com/Who5673/genpasswd/releases/download/1.0.6/password-generate_1.0.7.deb
-sudo dpkg -i password-generate_1.0.6.deb
+wget https://github.com/Who5673/genpasswd/releases/download/1.0.8/password-generator_1.0.8_all.deb
+sudo dpkg -i password-generator_1.0.8_all.deb
 ```
 Check if you have installed password-generator (genpasswd)
 ```
@@ -53,8 +60,8 @@ sudo apt update && sudo apt --yes install gdebi
 - Install .deb file using gdebi or dpkg.  
     **Using gdebi CLI: Open the Terminal (Ctrl+Alt+T or the Terminal icon) and execute this command:**
 ```
-wget https://github.com/Who5673/genpasswd/releases/download/1.0.6/password-generate_1.0.7.deb
-sudo gdebi /path/to/password-generate.deb
+wget https://github.com/Who5673/genpasswd/releases/download/1.0.8/password-generator_1.0.8_all.deb
+sudo gdebi password-generator_1.0.8_all.deb
 ```
 - Optional: You can remove the installation package like this picture (make sure to remember the path to the package):
 
@@ -64,6 +71,10 @@ sudo gdebi /path/to/password-generate.deb
         If you have changed attribute (`chattr`) some system directories, please `chattr -i -a /usr /bin ...` first.
 
 ## Uninstallations:
+- Uninstall genpasswd by using this command:
+```
+sudo apt purge --yes password-generator
+```
 
 
 License: MIT  
