@@ -31,8 +31,8 @@ Recommend: You can install python3 libraries (`python3-xyz`, which xyz is a libr
 ### 1. Install via Linux system Packages Installer (from `apt`, `dpkg` or `gdebi`)
 - **Install via apt for the first time**:
 ```
-curl -fsSL https://who5673.github.io/genpasswd-apt-repo/genpasswd.gpg | sudo gpg --dearmor -o /usr/share/keyrings/genpasswd.gpg > /dev/null
-echo "deb [signed-by=/usr/share/keyrings/genpasswd.gpg] https://who5673.github.io/genpasswd-apt-repo stable main" | sudo tee /etc/apt/sources.list.d/genpasswd.list
+curl -fsSL https://who5673.github.io/genpasswd/dists/stable/Release.gpg | sudo gpg --dearmor -o /usr/share/keyrings/genpasswd.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/genpasswd.gpg] https://who5673.github.io/genpasswd stable main" | sudo tee /etc/apt/sources.list.d/genpasswd.list
 sudo apt update 2>/dev/null && sudo apt --yes install password-generator
 ```
 - __Install via apt after adding the repo:__
