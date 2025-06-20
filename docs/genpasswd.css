@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Ubuntu Sans Mono';
+    src: url('fonts/ubuntu_sans_mono/UbuntuSansMono-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#Welcome {
+    color: orange;
+    font-weight: bold;
+    font-size: 50px;
+}
+#update {
+    color: blue;
+}
+#ico {
+    color: white;
+    background-color: white;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.container {
+    display: flex; /* Vertical classify */
+    height: 100vh;
+}
+nav {
+    position: fixed;
+    width: 90px;
+    height: 100dvh;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    border: 2px solid;
+    overflow-y: auto;
+    z-index: 10;
+    /* position: fixed -> z-index high as nav cannot move */
+}
+nav ul {
+    /*position: fixed;
+    list-style: none;*/
+    padding: 0;
+}
+nav li {
+    list-style: none;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+main {
+    margin-left: 110px;
+    flex: 1; /* Other things are in here */
+    padding: 20px;
+}
+footer {
+    z-index: 10;
+    margin-left: 110px;
+}
+#abc {
+    background: transparent; /* No colors for the input */
+    border-top: white; /* No borders */
+    color: white; /* White texts */
+    font-family: monospace;
+    font-size: 50px;
+    resize: none;
+    box-sizing: border-box;
+}
+.genpasswd {
+    margin-left: 25%;
+}
+
+#generator {
+    border-radius: 30px;
+    width: 500px;
+    height: 50px;
+}
+#version {
+    font-family: 'Ubuntu Sans Mono';
+    font-weight: 900;
+    color: rgb(0, 255, 0);
+}
+#license:visited {
+    color: blue;
+}
+#license:hover {
+    color: orange
+}
+#license:active {
+    color: red
+}
+#ascii {
+    animation: colorChanger;
+    animation-play-state: running;
+    animation-duration: 5s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+@keyframes colorChanger {
+    0%{color: red}
+    14%{color: orange}
+    29%{color: yellow}
+    43%{color: rgb(11, 236, 11)}
+    57%{color: rgb(0, 195, 255)}
+    72%{color: rgb(17, 14, 240)}
+    86%{color: rgb(255, 0, 149)}
+    100%{color: red}
+}
