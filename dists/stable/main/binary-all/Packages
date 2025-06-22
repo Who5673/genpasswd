@@ -6,10 +6,10 @@ Depends: python3-rich (>=13.4.0),python3-textual (>=0.47.1),python3,bash,pkexec,
 Suggests: zsh,konsole
 Replaces: python3-genpasswd
 Filename: pool/main/p/password-generator/password-generator_1.0.8_all.deb
-Size: 292404
-MD5sum: ac7de4b2e0724d2e5b771a4fdb8212b5
-SHA1: 3782fdc3802cc27649ed9dc1edae91a89ad6cd43
-SHA256: 95217cc3b4fbd1791a0525a6fd64b3debdc27a132dea60b27f2a6f5114c7cb86
+Size: 292500
+MD5sum: c18cf74505f9f504f38806f59c45f5c3
+SHA1: 9df272b04daa8ad3ed71f0bbd955a9a116cada98
+SHA256: 631a38b52483b0692c93771473fcf061f1a691edace1a99c73625e334626ace4
 Section: utils
 Priority: optional
 Description: This is a 13-100 password generator.
