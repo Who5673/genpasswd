@@ -81,7 +81,7 @@ sudo apt purge --yes password-generator
 ```
 
 
-License: MIT  
+License: GPLv3  
 From v1.0.8 of genpasswd, the license will be changed from MIT to GPLv3.  
 Some ideas assisted by ChatGPT - (c) genpasswd, who5673, June 2025. All rights served.
 You can support us to improve this application in the future, but do not vandalize this project or make another copyright of it.
