@@ -5,7 +5,7 @@ Maintainer: who5673 <windows7modrenedition@gmail.com>
 Depends: python3-rich (>=13.4.0),python3-textual (>=0.47.1),python3,bash,pkexec,libncurses-dev
 Suggests: zsh,konsole
 Replaces: python3-genpasswd
-Filename: pool/main/p/password-generator/password-generator_1.0.8_all.deb
+Filename: pool/main/p/password-generator/password-generator_1.0.8_amd64.deb
 Size: 292500
 MD5sum: c18cf74505f9f504f38806f59c45f5c3
 SHA1: 9df272b04daa8ad3ed71f0bbd955a9a116cada98
