@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include requirements.txt
+include genpasswd/genpasswd.cpython-313-x86_64-linux-gnu.so
+include bin/genpasswd
+include bin/genpasswdtui
+include man/genpasswdtui.1.gz
